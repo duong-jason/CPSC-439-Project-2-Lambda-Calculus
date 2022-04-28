@@ -7,18 +7,33 @@
 # return 1 if string accepts
 # different lambda functions are different states and depending on their input, they'll transition into another state
 
-val0 = 0
-val1 = 1
+# input_string = input("Enter your input string: ")
+# print(input_string)
 
-input_string = input("Enter your input string: ")
-print(input_string)
+# new_string = [int(a) for a in str(input_string)]
+# print(new_string)
 
-new_string = [int(a) for a in str(input_string)]
-print(new_string)
+def lambda_calc(new_string):
+    init_state = (lambda x: "go to 6.3" if (x == 1) else "got to 6.4") # (new_string[0])
+    # print(init_state) 
+    print(init_state(new_string[0]))
+    # match new_string[0]:
+    #     case 0:
+    #         return "yes"
+    #     case 1:
+    #         return "no"
+    #     case default:
+    #         return "uhh"
 
-first = int(new_string[0])
 
-# prints first element in list if it's the only 1 of its kind
-# how to get elements of a list with lambda functions though?
-init_state = next(filter(lambda x: new_string[x] == 0, new_string), None)
-print(init_state)
+def main():
+    input_string = input("Enter your input string: ")
+    print(input_string)
+
+    new_string = [int(a) for a in str(input_string)]
+    print(new_string)
+    lambda_calc(new_string)
+
+
+if __name__ == '__main__':
+    main()    
