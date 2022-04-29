@@ -13,17 +13,47 @@
 # new_string = [int(a) for a in str(input_string)]
 # print(new_string)
 
-def lambda_calc(new_string):
-    init_state = (lambda x: "go to 6.3" if (x == 1) else "got to 6.4") # (new_string[0])
+def state_q0(new_string):
+    # new_string = new_string[1:] # remove first character of string
+    
+    init_state = (lambda x: state_q1(new_string) if (x == 0) else state_q5(new_string)) # (new_string[0])
     # print(init_state) 
     print(init_state(new_string[0]))
-    # match new_string[0]:
-    #     case 0:
-    #         return "yes"
-    #     case 1:
-    #         return "no"
-    #     case default:
-    #         return "uhh"
+    # return 0 # bc rejected state
+    
+    
+# leads to Figure 6.4
+def state_q1(new_string): 
+    s1 = (lambda x: state_q3(new_string) if (x == 0) else state_q4(new_string))
+    print(s1(new_string[0]))
+    # return 1 # bc accepting state
+    
+def state_q2(new_string):
+    s2 = (lambda x: state_q1(new_string) if (x == 0) else state_q4(new_string))
+    print(s2(new_string[0]))
+    # return 0 # bc rejected state
+    
+def state_q3(new_string):
+    s3 = (lambda x: state_q1(new_string) if (x == 0) else state_q2(new_string))
+    print(s3(new_string[0]))
+    # return 0 # bc rejected state
+    
+def state_q4(new_string):
+    s4 = (lambda x: state_q4(new_string) if (x == 0) else state_q4(new_string))
+    print(s4(new_string[0]))
+    # return 0 # bc rejected state
+    
+    
+# leads to Figure 6.3
+def state_q5(new_string): 
+    s5 = (lambda x: state_q5(new_string) if (x == 0) else state_q6(new_string))
+    print(s5(new_string[0]))
+    # return 0 # bc rejected state
+    
+def state_q6(new_string): 
+    s6 = (lambda x: state_q6(new_string) if (x == 0) else state_q5(new_string))
+    print(s6(new_string[0]))
+    # return 1 # bc accepting state
 
 
 def main():
@@ -32,7 +62,7 @@ def main():
 
     new_string = [int(a) for a in str(input_string)]
     print(new_string)
-    lambda_calc(new_string)
+    state_q0(new_string)
 
 
 if __name__ == '__main__':
