@@ -2,7 +2,7 @@
 
 # Group Members: 
 # Bradley Diep
-# John Dinh - 
+# John Dinh 
 # Jason Duong
 # Omid Nikjoo
 
