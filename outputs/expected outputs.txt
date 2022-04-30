@@ -1,0 +1,18 @@
+An output of one means that the value is not accepted. A 0 means that it is accepted.
+
+
+expected outputs for each value entered: 
+input: 100 
+output: 0 (accepted)
+
+input: 1 
+output: 0
+
+input: 1010
+output: 1 (not accepted)
+
+input: 10110
+output: 0 (accepted)
+
+input: 10000011
+output: 0 (accepted)
