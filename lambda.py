@@ -82,7 +82,7 @@ def state_q6(input_string):
 def main():
     value = input("please say which number you want to test out (100, 1010, 1, 10110, 10000011)\n")
     value+=".txt"
-    data = open(value, "r")
+    data = open("testfiles/" + value, "r")
     input_string = data.read()
 
   
