@@ -80,7 +80,14 @@ def state_q6(input_string):
 
 
 def main():
-    input_string = input("Enter a binary string: ")
+    value = input("please say which number you want to test out (100, 1010, 1, 10110, 10000011)\n")
+    value+=".txt"
+    data = open(value, "r")
+    input_string = data.read()
+
+  
+
+
     
     if ("0" in input_string or "1" in input_string):
         input_string = [int(a) for a in str(input_string)]
