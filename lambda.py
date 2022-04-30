@@ -11,8 +11,6 @@ import sys
 
 def state_q0(input_string):
     new_string = input_string[1:] # remove first character of string
-    # print(new_string) # prints list without the first element
-
     init_state = (lambda x: state_q1(new_string) if (x == 0) else state_q5(new_string)) # (new_string[0])
     # print(init_state) 
     print(init_state(input_string[0]))
@@ -22,7 +20,6 @@ def state_q0(input_string):
 def state_q1(input_string):
     if not len(input_string):
         sys.exit('1') # 1 shows that it's an accepted string
-        # return 1 
     else:
         new_string = input_string[1:]
         s1 = (lambda x: state_q3(new_string) if (x == 0) else state_q4(new_string))
@@ -31,7 +28,6 @@ def state_q1(input_string):
 
 def state_q2(input_string):
     if not len(input_string):
-        # return 0 
         sys.exit('0') # 0 shows that it's a rejected string
     else:
         new_string = input_string[1:]
@@ -41,7 +37,6 @@ def state_q2(input_string):
 
 def state_q3(input_string):
     if not len(input_string):
-        # return 0 
         sys.exit('0') # 0 shows that it's a rejected string
     else:
         new_string = input_string[1:]
@@ -50,8 +45,7 @@ def state_q3(input_string):
 
 
 def state_q4(input_string):
-    if not len(input_string):
-        # return 0 
+    if not len(input_string): 
         sys.exit('0') # 0 shows that it's a rejected string
     else:
         new_string = input_string[1:]
@@ -62,7 +56,6 @@ def state_q4(input_string):
 # # leads to Figure 6.3
 def state_q5(input_string):
     if not len(input_string):
-        # return 0 
         sys.exit('0') # 0 shows that it's a rejected string
     else:
         new_string = input_string[1:]
@@ -72,7 +65,6 @@ def state_q5(input_string):
 
 def state_q6(input_string):
     if not len(input_string):
-        # return 1 
         sys.exit('1') # 1 shows that it's an accepted string
     else:
         new_string = input_string[1:]
