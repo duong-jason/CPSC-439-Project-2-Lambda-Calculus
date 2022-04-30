@@ -6,7 +6,7 @@ input: 100
 output: 0 (accepted)
 
 input: 1 
-output: 0
+output: 0 (accepted)
 
 input: 1010
 output: 1 (not accepted)
